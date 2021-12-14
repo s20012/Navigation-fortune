@@ -1,0 +1,29 @@
+<resources>
+    <string name="app_name">Test</string>
+    <string name="title_home">Home</string>
+    <string name="title_dashboard">Dashboard</string>
+    <string name="title_notifications">Notifications</string>
+
+    <string name="signName">sign</string>
+    <string name="signName1">Aries</string>
+    <string name="signName2">Taurus</string>
+    <string name="signName3">Gemini</string>
+    <string name="signName4">Cancer</string>
+    <string name="signName5">Leo</string>
+    <string name="signName6">Virgo</string>
+    <string name="signName7">Libra</string>
+    <string name="signName8">Scorpion</string>
+    <string name="signName9">Sagittarius</string>
+    <string name="signName10">Capricorn</string>
+    <string name="signName11">Aquarius</string>
+    <string name="signName12">Pisces</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="job">仕事運</string>
+    <string name="money">金運</string>
+    <string name="love">恋愛運</string>
+    <string name="total">総合評価</string>
+    <string name="advice">アドバイス</string>
+    <string name="backButton">戻る</string>
+</resources>
