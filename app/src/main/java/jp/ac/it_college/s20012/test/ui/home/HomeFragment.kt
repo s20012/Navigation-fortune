@@ -50,8 +50,6 @@ class HomeFragment : Fragment() {
         }
         registerForContextMenu(binding.gvconstellation)
 
-
-
         return binding.root
     }
     private fun order(sign: MutableMap<String, Any>) {

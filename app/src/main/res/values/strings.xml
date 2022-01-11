@@ -25,5 +25,5 @@
     <string name="love">恋愛運</string>
     <string name="total">総合評価</string>
     <string name="advice">アドバイス</string>
-    <string name="backButton">戻る</string>
+    <string name="backButton" translatable="false">戻る</string>
 </resources>

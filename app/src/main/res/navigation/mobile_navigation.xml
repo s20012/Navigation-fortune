@@ -25,14 +25,29 @@
             app:destination="@id/navigation_home" />
 
         <argument android:name="sign_name"  app:argType="string"/>
-        <argument android:name="sign_id"
-            app:argType="integer" />
+        <argument android:name="sign_id"  app:argType="integer" />
     </fragment>
+
+
 
     <fragment
         android:id="@+id/navigation_dashboard"
         android:name="jp.ac.it_college.s20012.test.ui.dashboard.DashboardFragment"
         android:label="@string/title_dashboard"
-        tools:layout="@layout/fragment_dashboard" />
+        tools:layout="@layout/fragment_dashboard" >
+        <action
+            android:id="@+id/action_to_book"
+            app:destination="@id/book" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/book"
+        android:name="jp.ac.it_college.s20012.test.ui.dashboard.SignBook"
+        android:label="fragment_book"
+        tools:layout="@layout/fragment_sign_book">
+
+        <argument android:name="sign_name"  app:argType="string"/>
+        <argument android:name="sign_id"  app:argType="integer" />
+    </fragment>
 
 </navigation>

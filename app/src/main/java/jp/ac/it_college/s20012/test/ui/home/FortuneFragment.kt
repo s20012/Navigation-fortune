@@ -118,10 +118,10 @@ class FortuneFragment : Fragment() {
 
                 binding.signName.text = signName
 
-                binding.moneyBar.stepSize = 0.3F * 0.01F
-                val anim = ObjectAnimator.ofFloat(binding.moneyBar, "rating", binding.moneyBar.rating, money.toFloat())
-                anim.duration = 6000
-                anim.start()
+                binding.moneyBar.stepSize = 0.01F
+                val anim1 = ObjectAnimator.ofFloat(binding.moneyBar, "rating", binding.moneyBar.rating, money.toFloat())
+                anim1.duration = 6000
+                anim1.start()
 
                 binding.jobBar.rating = job.toFloat()
 
