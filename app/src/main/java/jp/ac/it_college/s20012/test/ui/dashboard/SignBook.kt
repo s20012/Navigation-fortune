@@ -3,6 +3,7 @@ package jp.ac.it_college.s20012.test.ui.dashboard
 import android.annotation.SuppressLint
 import android.os.Build
 import android.os.Bundle
+import android.os.CountDownTimer
 import android.os.Looper
 import android.util.Log
 import android.view.LayoutInflater
@@ -40,6 +41,10 @@ class SignBook : Fragment() {
 
         _binding = FragmentSignBookBinding.inflate(inflater, container, false)
 
+        binding.local.visibility = View.INVISIBLE
+
+        //loading
+        TimeLeftCountdown().start()
 
         signUrl()
         fortuneTelling()
@@ -104,23 +109,32 @@ class SignBook : Fragment() {
                 val origin = index.getString("origin")
                 val roughly = index.getString("roughly")
 
-                Log.d("TAG", roughly)
-
 
 
                 Glide.with(this)
                     .load(starIcon)
                     .into(binding.imageView)
 
-                binding.textView5.text = content
-                binding.imageView.drawable
                 binding.textView.text = jpName
+                binding.textView5.text = content
                 binding.textView2.text = origin
 
             }
 
         }
     }
+
+    inner class TimeLeftCountdown : CountDownTimer(3000, 1000) {
+        override fun onTick(millisUntilFinished: Long) {
+        }
+
+        override fun onFinish() {
+            binding.local.visibility = View.VISIBLE
+            binding.progressBar2.visibility = View.INVISIBLE
+        }
+
+        }
+
     private fun is2String(stream: InputStream): String {
         val sb = StringBuilder()
         val reader = BufferedReader(InputStreamReader(stream, "UTF-8"))

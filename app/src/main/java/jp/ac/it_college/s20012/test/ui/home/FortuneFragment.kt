@@ -3,6 +3,7 @@ package jp.ac.it_college.s20012.test.ui.home
 import android.animation.ObjectAnimator
 import android.os.Build
 import android.os.Bundle
+import android.os.CountDownTimer
 import android.os.Looper
 import android.util.Log
 import android.view.LayoutInflater
@@ -39,6 +40,11 @@ class FortuneFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View {
         _binding = FragmentFortuneBinding.inflate(inflater, container, false)
+
+        binding.fragment.visibility = View.INVISIBLE
+
+        //loading
+        TimeLeftCountdown().start()
 
         signImage()
         fortuneTelling()
@@ -118,10 +124,7 @@ class FortuneFragment : Fragment() {
 
                 binding.signName.text = signName
 
-                binding.moneyBar.stepSize = 0.01F
-                val anim1 = ObjectAnimator.ofFloat(binding.moneyBar, "rating", binding.moneyBar.rating, money.toFloat())
-                anim1.duration = 6000
-                anim1.start()
+                binding.moneyBar.rating = money.toFloat()
 
                 binding.jobBar.rating = job.toFloat()
 
@@ -135,6 +138,18 @@ class FortuneFragment : Fragment() {
 
         }
     }
+
+    inner class TimeLeftCountdown : CountDownTimer(2000, 1000) {
+        override fun onTick(millisUntilFinished: Long) {
+        }
+
+        override fun onFinish() {
+            binding.fragment.visibility = View.VISIBLE
+            binding.progressBar3.visibility = View.INVISIBLE
+        }
+
+    }
+
     private fun is2String(stream: InputStream): String {
         val sb = StringBuilder()
         val reader = BufferedReader(InputStreamReader(stream, "UTF-8"))
