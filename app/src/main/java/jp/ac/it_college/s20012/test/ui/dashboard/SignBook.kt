@@ -43,7 +43,7 @@ class SignBook : Fragment() {
 
         binding.local.visibility = View.INVISIBLE
 
-        //loading
+        //ここにloadingを動かす命令を記述
         TimeLeftCountdown().start()
 
         signUrl()
@@ -124,6 +124,8 @@ class SignBook : Fragment() {
         }
     }
 
+    //loadingはここから
+
     inner class TimeLeftCountdown : CountDownTimer(3000, 1000) {
         override fun onTick(millisUntilFinished: Long) {
         }
@@ -134,6 +136,8 @@ class SignBook : Fragment() {
         }
 
         }
+
+    //ここまで
 
     private fun is2String(stream: InputStream): String {
         val sb = StringBuilder()

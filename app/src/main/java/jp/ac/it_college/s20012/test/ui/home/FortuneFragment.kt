@@ -43,7 +43,7 @@ class FortuneFragment : Fragment() {
 
         binding.fragment.visibility = View.INVISIBLE
 
-        //loading
+        //ここにloadingを動かす命令を記述
         TimeLeftCountdown().start()
 
         signImage()
@@ -139,6 +139,8 @@ class FortuneFragment : Fragment() {
         }
     }
 
+    //loadingはここから
+
     inner class TimeLeftCountdown : CountDownTimer(2000, 1000) {
         override fun onTick(millisUntilFinished: Long) {
         }
@@ -149,6 +151,9 @@ class FortuneFragment : Fragment() {
         }
 
     }
+
+    //ここまで
+
 
     private fun is2String(stream: InputStream): String {
         val sb = StringBuilder()
